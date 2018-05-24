@@ -11,7 +11,23 @@
 
       <mt-tab-container class="page-tabbar-container" v-model="selected">
         <mt-tab-container-item id="tab_workspace">
-          <mt-cell v-for="n in 10" :key="n" :title="'餐厅 ' + n" />
+          <div>
+            <p style="text-align:left">快速创建</p>
+            <ul style="list-style:none">
+              <li>任务</li>
+              <li>项目</li>
+            </ul>
+          </div>
+          <div>
+            <p style="text-align:left">我的任务</p>
+            <ul style="list-style:none">
+              <li>今天任务</li>
+              <li>过期任务</li>
+              <li>待完成任务</li>
+              <li>已完成任务</li>
+              <li>全部任务</li>
+            </ul>
+          </div>
         </mt-tab-container-item>
         <mt-tab-container-item id="tab_program">
           <mt-cell v-for="n in 5" :key="n" :title="'订单 ' + n" />
@@ -54,21 +70,19 @@ export default {
     }
   },
   methods: {
-    handleProfile () {
-
-    }
+    handleProfile () {}
   }
 }
 </script>
 
 <style>
-  .page-tabbar {
-    overflow: hidden;
-    height: 100vh;
-  }
-  .page-wrap {
-    overflow: auto;
-    height: 100%;
-    padding-bottom: 100px;
-  }
+.page-tabbar {
+  overflow: hidden;
+  height: 100vh;
+}
+.page-wrap {
+  overflow: auto;
+  height: 100%;
+  padding-bottom: 100px;
+}
 </style>
