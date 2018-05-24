@@ -43,7 +43,6 @@
         {{$t('label.contact')}}
       </mt-tab-item>
     </mt-tabbar>
-
   </div>
 </template>
 
