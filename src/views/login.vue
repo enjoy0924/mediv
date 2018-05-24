@@ -31,6 +31,7 @@ export default {
     handleLogin () {
       this.loading = true
       this.$store.dispatch('LoginByUsername', this.credential).then(() => {
+        debugger
         this.loading = false
         this.$router.push({ path: '/' })
       }).catch(() => {
