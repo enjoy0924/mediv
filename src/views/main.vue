@@ -11,28 +11,7 @@
 
       <mt-tab-container class="page-tabbar-container" v-model="selected">
         <mt-tab-container-item id="tab_workspace">
-        <p class="left-allign">快速新建</p>
-        <ul class="list-container">
-          <router-link tag="li" to="/new/task">
-            <li>任务
-              <mt-badge type="warning">10</mt-badge>
-            </li>
-          </router-link>
-          <router-link tag="li" to="/new/program">
-            <li>项目
-            </li>
-          </router-link>
-        </ul>
-
-        <p class="left-allign">我的任务</p>
-        <ul class="list-container">
-          <li>今天任务</li>
-          <li>过期任务</li>
-          <li>待完成任务</li>
-          <li>已完成任务</li>
-          <li>全部任务</li>
-        </ul>
-
+        <workspace-view/>
         </mt-tab-container-item>
         <mt-tab-container-item id="tab_program">
           <!-- <mt-cell v-for="n in 5" :key="n" :title="'订单 ' + n" /> -->
@@ -68,10 +47,28 @@
 </template>
 
 <script>
+import workspaceView from './workspace/workspace'
 export default {
   data () {
     return {
-      selected: ''
+      selected: '',
+      favourites: [
+        {title: '今天任务', path: '/tasks/today'},
+        {title: '过期任务', path: '/tasks/overdue'},
+        {title: '待完成任务', path: '/tasks/unfinished'},
+        {title: '已完成任务', path: '/tasks/done'},
+        {title: '全部任务', path: '/tasks'}
+      ]
+    }
+  },
+  components: {'workspace-view': workspaceView},
+  watch: {
+    selected: function (val, old) {
+      debugger
+      console.log('')
+    },
+    $route () {
+      console.log('route change')
     }
   },
   methods: {
@@ -89,22 +86,5 @@ export default {
     overflow: auto;
     height: 100%;
     padding-bottom: 100px;
-  }
-  .left-allign
-  {
-    position:absolute;
-    left:0px;
-  }
-  .list-container{
-    display:  flex;
-    margin-top: 80px;
-    list-style:  none;
-    flex-wrap: wrap;
-    border:  1px solid;
-  }
-  .list-container > li{
-    width: 114px;
-    margin: 10px;
-    height: 61px;
   }
 </style>
