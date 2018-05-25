@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin-top:200px">
     <mt-field :label="$t('profile.username')" placeholder="请输入用户名" v-model="credential.username"></mt-field>
     <mt-field :label="$t('profile.password')" placeholder="请输入密码" type="password" v-model="credential.password"></mt-field>
     <mt-field label="验证码" v-model="credential.captcha">

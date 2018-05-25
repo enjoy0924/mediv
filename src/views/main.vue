@@ -23,6 +23,16 @@
             </li>
           </router-link>
         </ul>
+
+        <p class="left-allign">我的任务</p>
+        <ul class="list-container">
+          <li>今天任务</li>
+          <li>过期任务</li>
+          <li>待完成任务</li>
+          <li>已完成任务</li>
+          <li>全部任务</li>
+        </ul>
+
         </mt-tab-container-item>
         <mt-tab-container-item id="tab_program">
           <!-- <mt-cell v-for="n in 5" :key="n" :title="'订单 ' + n" /> -->
@@ -65,9 +75,7 @@ export default {
     }
   },
   methods: {
-    handleProfile () {
-
-    }
+    handleProfile () {}
   }
 }
 </script>
