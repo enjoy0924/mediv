@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
+import HelloWorld from '@/components/HelloWorld'
 import loginView from '@/views/login'
 import mainView from '@/views/main'
 
@@ -16,6 +16,11 @@ export const routersConf = [
     path: '/login',
     name: 'login',
     component: loginView
+  },
+  {
+    path: '/new/task',
+    name: 'new task',
+    component: HelloWorld
   }
 ]
 

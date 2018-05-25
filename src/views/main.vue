@@ -11,16 +11,27 @@
 
       <mt-tab-container class="page-tabbar-container" v-model="selected">
         <mt-tab-container-item id="tab_workspace">
-          <mt-cell v-for="n in 10" :key="n" :title="'餐厅 ' + n" />
+        <p class="left-allign">快速新建</p>
+        <ul class="list-container">
+          <router-link tag="li" to="/new/task">
+            <li>任务
+              <mt-badge type="warning">10</mt-badge>
+            </li>
+          </router-link>
+          <router-link tag="li" to="/new/program">
+            <li>项目
+            </li>
+          </router-link>
+        </ul>
         </mt-tab-container-item>
         <mt-tab-container-item id="tab_program">
-          <mt-cell v-for="n in 5" :key="n" :title="'订单 ' + n" />
+          <!-- <mt-cell v-for="n in 5" :key="n" :title="'订单 ' + n" /> -->
         </mt-tab-container-item>
         <mt-tab-container-item id="tab_message">
-          <mt-cell v-for="n in 7" :key="n" :title="'发现 ' + n" />
+          <!-- <mt-cell v-for="n in 7" :key="n" :title="'发现 ' + n" /> -->
         </mt-tab-container-item>
         <mt-tab-container-item id="tab_contact">
-          <mt-cell v-for="n in 12" :key="n" :title="'我的 ' + n" />
+          <!-- <mt-cell v-for="n in 12" :key="n" :title="'我的 ' + n" /> -->
         </mt-tab-container-item>
       </mt-tab-container>
     </div>
@@ -70,5 +81,22 @@ export default {
     overflow: auto;
     height: 100%;
     padding-bottom: 100px;
+  }
+  .left-allign
+  {
+    position:absolute;
+    left:0px;
+  }
+  .list-container{
+    display:  flex;
+    margin-top: 80px;
+    list-style:  none;
+    flex-wrap: wrap;
+    border:  1px solid;
+  }
+  .list-container > li{
+    width: 114px;
+    margin: 10px;
+    height: 61px;
   }
 </style>
