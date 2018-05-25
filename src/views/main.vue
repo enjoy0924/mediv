@@ -1,8 +1,8 @@
 <template>
   <div>
     <mt-header title="工作台">
-      <router-link to="/" slot="left">
-        <mt-button @click="handleProfile">我</mt-button>
+      <router-link to="/profile" slot="left">
+        我
       </router-link>
     </mt-header>
 
@@ -47,11 +47,11 @@
 </template>
 
 <script>
-import workspaceView from './workspace/workspace'
+import workspaceView from './tabbarviews/workspace'
 export default {
   data () {
     return {
-      selected: '',
+      selected: 'tab_workspace', // 这个值最好从历史记录里面读取，这里暂时默认去工作台
       favourites: [
         {title: '今天任务', path: '/tasks/today'},
         {title: '过期任务', path: '/tasks/overdue'},

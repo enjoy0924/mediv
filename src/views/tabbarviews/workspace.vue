@@ -41,19 +41,17 @@ export default{
 <style>
   .left-allign
   {
-    position:absolute;
-    left:0px;
+    text-align:left;
   }
   .list-container{
     display:  flex;
-    margin-top: 80px;
     list-style:  none;
     flex-wrap: wrap;
-    border:  1px solid;
   }
   .list-container > li{
     width: 114px;
     margin: 10px;
     height: 61px;
+    background-color: tomato
   }
 </style>
